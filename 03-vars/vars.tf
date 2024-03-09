@@ -30,7 +30,7 @@ variable "sample4" {
   default = 100
 }
 output "sample4" {
-  value = "var.sample4"
+  value = var.sample4
 }
 
 #list variable type
@@ -42,7 +42,7 @@ variable "sample5"{
   ]
 }
 output "sample5" {
-  value = "var.sample5[1]"
+  value = var.sample5[1]
 }
 #map variable type
 variable "sample6" {
