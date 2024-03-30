@@ -14,5 +14,5 @@ data "aws_ami" "centos8" {
 }
 
 output "instance_profile" {
-  value = try(aws_instance.web.*.id[1], null)
+  value = try(aws_instance.web.*.id[1], "")
 }
