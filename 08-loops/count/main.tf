@@ -1,4 +1,5 @@
 resource "aws_instance" "web" {
+  count         = 1
   ami           = data.aws_ami.centos8.id
   instance_type = "t3.micro"
 
@@ -14,5 +15,9 @@ data "aws_ami" "centos8" {
 }
 
 output "public_ip" {
-  value = aws_instance.web.public_ip
+  #without count
+#  value = aws_instance.web.public_ip
+
+#  with count
+  value = aws_instance.web.*.public_ip
 }
